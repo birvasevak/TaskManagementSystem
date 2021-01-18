@@ -1,4 +1,6 @@
-# TaskManagement System
+# Task Management System
+
+This project provides all CRUD operations on the tasks to made a to-do list along with login and registration options.
 
 ## TaskManagementUI
 
@@ -12,6 +14,13 @@ This Web API project is generated using .NET Framework 4.7.2
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 The API runs on `http://localhost:44360/` using IIS Express.
+
+### Testing/Demo
+
+The application can be tested on the local machine. The database script is provided for it's completed use.
+Testing credentials:
+username: john@gmail.com
+password: John@123
 
 ### Code scaffolding
 
