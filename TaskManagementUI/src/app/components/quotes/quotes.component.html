@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">
+    <div class="container d-flex justify-content-between">
+        <span>Task Management System</span>
+        <button (click)="Logout()"  mat-flat-button color="primary">
+            Log Out
+        </button>
+    </div>
+</mat-toolbar>
+
+
+<div class="container tasks-container mt-5">
+    
+    <div class="">
+    <div class="tableTitle">
+        <span class="font-weight-bold">Tasks Details</span>
+        <button class="add-btn" (click)="onAdd()" data-toggle="tooltip" data-placement="top" title="Add New Quote">
+            <mat-icon [inline]="true" >note_add</mat-icon>
+            Add Task
+        </button>
+    </div>
+<table #quoteTable id="quoteTable" class="table table-hover table-responsive  compact quoteTable" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>Quote Type</th>
+            <th>No.</th>
+            <th>Contact</th>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Task Type</th>
+            <th>Actions</th>
+            <!-- <th>User ID</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let q of quotes" [item]="q"> 
+            <!--  (click)="onView(q)" on tr -->
+            <td>{{ q.QuoteType }}</td>
+            <td scope="row" class="id-link"><a href="javascript:void(0)" (click)="onView(q)" >{{ q.QuoteId }}</a></td>
+            <td>{{ q.Contact }}</td>
+            <td>{{ q.TaskDescription}}</td> 
+            <!-- (q.TaskDescription | slice:0:100)+'...' -->
+            <td>{{ q.DueDate | date:'short' }}</td>
+            <td>{{ q.TaskType }}</td>
+            <td class="p-2 d-flex justify-content-between action-links">
+                <mat-icon [inline]="true" (click)="onView(q)" data-toggle="tooltip" data-placement="top" title="View">remove_red_eye</mat-icon>
+               <mat-icon [inline]="true" (click)="onEdit(q)" data-toggle="tooltip" data-placement="top" title="Edit">edit</mat-icon>
+               <mat-icon [inline]="true" (click)="onDelete(q)" data-toggle="tooltip" data-placement="top" title="Delete">delete_outline</mat-icon>
+            </td>
+            <!-- <td>{{ q.UserId }}</td> -->
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<!-- <div class="form-group form-inline row">
+    <label for="orderby" class="col-sm-2 col-form-label">Order By: </label>
+    <div class="col-sm-6">
+        <select class="form-control">
+            <option value="0">Quote Type</option>
+            <option value="1">Quote No.</option>
+            <option value="2">Task</option>
+            <option value="3">Due Date</option>
+            <option value="4">Task Type</option>
+        </select>
+    </div>
+</div> -->
+

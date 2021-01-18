@@ -1,0 +1,114 @@
+ <div class="task-header">
+    Update Task
+</div>
+
+<div class="container mt-4">
+    <div *ngIf="successmsg?.length"  class="alert alert-success alert-dismissible fade show m-2" role="alert">
+        <strong>Successfully</strong> updated the task.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+ <form #updateTaskForm="ngForm" novalidate (ngSubmit)="onUpdate()">
+        <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Status <span class="text-danger">*</span></label>
+            
+            <div class="col-sm-6">
+                <select id="inputStatus" class="form-control"  name="status" #status>
+                    <option value="open" selected>Open</option>
+                    <option value="close">Close</option>
+                </select>
+            </div>
+        </div>
+ 
+        <div class="form-group row">
+            <label for="quoteType" class="col-sm-2 col-form-label">Quote Type <span class="text-danger">*</span></label>
+           
+            <div class="col-sm-6">
+                <input   #quoteType="ngModel" name="quoteType" type="text" class="form-control" id="quoteType" required  [(ngModel)]="currentQuote.QuoteType" [ngClass]="{
+                'is-invalid': quoteType.invalid && (quoteType.dirty || quoteType.touched),
+                'is-valid': quoteType.valid}" >
+                
+                <div *ngIf="quoteType.invalid && (quoteType.dirty || quoteType.touched)" class="invalid-feedback">
+                    <div *ngIf="quoteType.errors.required">
+                        Quote Type is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="taskType" class="col-sm-2 col-form-label">Task Type <span class="text-danger">*</span></label>
+            
+            <div class="col-sm-6">
+                <input required [ngClass]="{'is-invalid': taskType.invalid && (taskType.dirty || taskType.touched),'is-valid': taskType.valid}"  #taskType="ngModel" [(ngModel)]="currentQuote.TaskType" name="taskType" type="text" class="form-control" id="taskType">
+
+                <div *ngIf="taskType.invalid && (taskType.dirty || taskType.touched)" class="invalid-feedback">
+                    <div *ngIf="taskType.errors.required">
+                        Task Type is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="contact" class="col-sm-2 col-form-label">Contact Name <span class="text-danger">*</span></label>
+            
+            <div class="col-sm-6">
+                <input required [ngClass]="{'is-invalid': contact.invalid && (contact.dirty || contact.touched),'is-valid': contact.valid}"  #contact="ngModel" name="contact" type="text" class="form-control" id="contact"   [(ngModel)]="currentQuote.Contact">
+
+                <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="invalid-feedback">
+                    <div *ngIf="contact.errors.required">
+                        Contact Name is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group   row">
+            <label for="duedate" class="col-sm-2 col-form-label">Due Date <span class="text-danger">*</span></label>
+            
+            <div class="col-sm-6 form-inline">
+                <input required [ngClass]="{'is-invalid': duedate.invalid && (duedate.dirty || duedate.touched),'is-valid': duedate.valid}" type="datetime-local" class="form-control" id="duedate" #duedate="ngModel" name="duedate" [(ngModel)]="currentQuote.DueDate">
+                <!--  [matDatepicker]="picker" 
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker> -->
+
+                <div *ngIf="duedate.invalid && (duedate.dirty || duedate.touched)" class="invalid-feedback">
+                    <div *ngIf="duedate.errors.required">
+                        Date Name is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Task Description <span class="text-danger">*</span></label>
+            
+            <div class="col-sm-9">
+                <textarea required [ngClass]="{'is-invalid': description.invalid && (description.dirty || description.touched),'is-valid': description.valid}" type="text" class="form-control" id="description" rows="5"  #description="ngModel" name="description" [(ngModel)]="currentQuote.TaskDescription">
+                 </textarea>
+
+                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback">
+                    <div *ngIf="description.errors.required">
+                        Task Description is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-3 offset-9">
+                <button type="submit" class="btn close-btn" [disabled]="!updateTaskForm.valid" >
+                    <mat-icon [inline]="true">save</mat-icon> Update
+                </button>
+                <button class="btn close-btn ml-1" (click)="onClose()" type="button">
+                    <mat-icon [inline]="true">close</mat-icon> Close
+                </button>
+                
+            </div>
+        </div>
+
+    </form> 
+
+</div> 

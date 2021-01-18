@@ -1,0 +1,11 @@
+.box {
+  /* min-width: 50%;
+  margin: auto; */
+}
+
+@media only screen and (min-width: 1200px) {
+  .box {
+    width: 60%;
+    margin: auto;
+  }
+}

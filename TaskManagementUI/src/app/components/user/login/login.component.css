@@ -1,0 +1,10 @@
+/* input.ng-touched.ng-invalid {
+  border: 1px solid #dc3545;
+}
+input.ng-touched.ng-valid {
+  border: 1px solid #28a745;
+} */
+
+.bbb {
+  border: 2px solid purple;
+}

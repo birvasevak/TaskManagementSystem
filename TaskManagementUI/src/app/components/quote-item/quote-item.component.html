@@ -1,0 +1,66 @@
+<div class="task-header">
+    Task Details
+</div>
+
+<div class="container mt-4">
+    <form action="" #viewTaskForm>
+        <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-6">
+                <select id="inputStatus" class="form-control">
+                    <option value="open" default>Open</option>
+                    <option value="close">Close</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="quoteType" class="col-sm-2 col-form-label">Quote Type</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="quoteType" readonly [value]="currentQuote.QuoteType">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="taskType" class="col-sm-2 col-form-label">Task Type</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="taskType" readonly [value]="currentQuote.TaskType">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="contact" class="col-sm-2 col-form-label">Contact Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="contact" readonly [value]="currentQuote.Contact">
+            </div>
+        </div>
+
+        <div class="form-group   row">
+            <label for="duedate" class="col-sm-2 col-form-label">Due Date</label>
+            <div class="col-sm-6 form-inline">
+                <input class="form-control" id="duedate" type="datetime-local" readonly [value]="currentQuote.DueDate">
+                <!-- [matDatepicker]="picker"  
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker> -->
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Task Description</label>
+            <div class="col-sm-9">
+                <textarea type="text" class="form-control" id="description" rows="5" readonly [value]="currentQuote.TaskDescription">
+                 </textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-3 offset-9">
+                <button class="btn close-btn" (click)="onClose()">
+                    <mat-icon [inline]="true">close</mat-icon> Close</button>
+            </div>
+        </div>
+
+    </form>
+    
+</div>
+

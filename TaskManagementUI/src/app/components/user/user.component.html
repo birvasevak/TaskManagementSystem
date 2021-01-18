@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+    <div class="container d-flex justify-content-between">
+        <span>Task Management System</span>
+    </div>
+</mat-toolbar>
+
+<div class="container">
+    <mat-card class="box mt-5">
+            <mat-tab-group mat-stretch-tabs mat-align-tabs="center" #tabGroup class="example-stretched-tabs">
+                <mat-tab  label="Login" #tabLogin>
+                    <app-login *ngIf="tabGroup.selectedIndex === 0"></app-login>
+                </mat-tab>
+                <mat-tab  label="Register" #tabRegister>
+                    <app-register *ngIf="tabGroup.selectedIndex === 1"></app-register>
+                </mat-tab>
+            </mat-tab-group>
+    </mat-card>
+</div>
