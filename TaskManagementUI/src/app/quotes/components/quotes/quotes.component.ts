@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { MatDialog, MatDialogConfig, _MatDialogBase } from '@angular/material/dialog';
 
 import { QuoteService } from 'src/app/services/quote.service';
-import { Quote } from '../../models/Quote/quote.model';
+import { Quote } from '../../../models/Quote/quote.model';
 import { QuoteItemComponent } from '../quote-item/quote-item.component';
 import { EditQuoteComponent } from '../edit-quote/edit-quote.component';
 import { AddQuoteComponent } from '../add-quote/add-quote.component';

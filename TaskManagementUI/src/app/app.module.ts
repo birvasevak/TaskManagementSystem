@@ -10,7 +10,7 @@ import { ValidateEqualModule } from 'ng-validate-equal';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
-import { QuotesComponent } from './components/quotes/quotes.component';
+import { QuotesComponent } from './quotes/components/quotes/quotes.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -18,10 +18,10 @@ import { MaterialModule } from './material/material.module';
 import { UserService } from './services/user.service';
 import { QuoteService } from './services/quote.service';
 import { AuthGuard } from './auth/auth.guard';
-import { QuoteItemComponent } from './components/quote-item/quote-item.component';
-import { AddQuoteComponent } from './components/add-quote/add-quote.component';
-import { EditQuoteComponent } from './components/edit-quote/edit-quote.component';
-import { DeleteQuoteComponent } from './components/delete-quote/delete-quote.component';
+import { QuoteItemComponent } from './quotes/components/quote-item/quote-item.component';
+import { AddQuoteComponent } from './quotes/components/add-quote/add-quote.component';
+import { EditQuoteComponent } from './quotes/components/edit-quote/edit-quote.component';
+import { DeleteQuoteComponent } from './quotes/components/delete-quote/delete-quote.component';
 
 
 @NgModule({

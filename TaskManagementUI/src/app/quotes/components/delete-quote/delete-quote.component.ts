@@ -19,12 +19,9 @@ export class DeleteQuoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentQuote = this.quoteService.currentQuote;
-    // console.log(this.currentQuote);
   }
 
   Delete() {
-    // debugger
-    // console.log(this.currentQuote);
     this.quoteService.deleteQuote(this.currentQuote).subscribe(res => {
       this.successMsg = "Success";
       setTimeout(() => {

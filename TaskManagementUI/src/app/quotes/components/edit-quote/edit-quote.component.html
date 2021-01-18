@@ -70,9 +70,6 @@
             
             <div class="col-sm-6 form-inline">
                 <input required [ngClass]="{'is-invalid': duedate.invalid && (duedate.dirty || duedate.touched),'is-valid': duedate.valid}" type="datetime-local" class="form-control" id="duedate" #duedate="ngModel" name="duedate" [(ngModel)]="currentQuote.DueDate">
-                <!--  [matDatepicker]="picker" 
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker> -->
 
                 <div *ngIf="duedate.invalid && (duedate.dirty || duedate.touched)" class="invalid-feedback">
                     <div *ngIf="duedate.errors.required">

@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { AuthGuard } from './auth/auth.guard';
-import { QuoteItemComponent } from './components/quote-item/quote-item.component';
 
-import { QuotesComponent } from './components/quotes/quotes.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { UserComponent } from './components/user/user.component';
@@ -19,11 +15,8 @@ export const routes: Routes = [
     children: [{ path: '', component: RegisterComponent}]
   },
   {
-    path: 'quotes', component: QuotesComponent, canActivate: [AuthGuard],
+    path: 'quotes', loadChildren: () => import('../app/quotes/quotes.module').then(m => m.QuotesModule)
     
-  },
-  {
-    path: 'addQuote', component: QuoteItemComponent, canActivate: [AuthGuard]
   },
   { path: '', component: UserComponent, pathMatch: 'full'},
 ];

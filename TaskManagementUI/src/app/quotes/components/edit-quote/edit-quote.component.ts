@@ -20,8 +20,6 @@ export class EditQuoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentQuote = this.quoteService.currentQuote;
-    // console.log(this.currentQuote);
-    // console.log(this.currentQuote.QuoteId)
   }
 
   onClose() {
@@ -29,9 +27,6 @@ export class EditQuoteComponent implements OnInit {
   }
 
   onUpdate() {
-    // debugger
-    // console.log(this.currentQuote);
-    // console.log(typeof this.currentQuote)
     this.quoteService.updateQuote(this.currentQuote).subscribe(res => {
       this.successmsg = "Success";
       

@@ -15,7 +15,6 @@ export class QuoteItemComponent implements OnInit {
   constructor(private quoteService: QuoteService, public dialogRef: MatDialogRef<QuoteItemComponent>) { }
 
   ngOnInit(): void {
-    // console.log(this.quoteService.currentQuote);
     this.currentQuote = this.quoteService.currentQuote;
   }
 
